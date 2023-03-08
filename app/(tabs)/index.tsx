@@ -19,9 +19,21 @@ export default function TabOneScreen() {
     );
   };
 
+  const renderEmptyDate = () => {
+    return (
+      <View style={styles.emptyDate}>
+        <Text>This is empty date!</Text>
+      </View>
+    );
+  };
+
   return (
     <View style={styles.container}>
-        <Agenda items={events} renderItem={renderItem} />
+        <Agenda 
+        items={events} 
+        renderItem={renderItem} 
+        renderEmptyDate={renderEmptyDate}
+        />
     </View>
   );
 }
@@ -37,5 +49,11 @@ const styles = StyleSheet.create({
     padding: 10,
     marginRight: 10,
     marginTop: 17,
+  },
+
+  emptyDate: {
+    height: 15,
+    flex: 1,
+    paddingTop: 30,
   }
 });
