@@ -22,7 +22,7 @@ export default function TabOneScreen() {
   const renderEmptyDate = () => {
     return (
       <View style={styles.emptyDate}>
-        <Text>This is an empty date!</Text>
+        <Text>This i an empty date!</Text>
       </View>
     );
   };
