@@ -22,7 +22,7 @@ export default function TabOneScreen() {
   const renderEmptyDate = () => {
     return (
       <View style={styles.emptyDate}>
-        <Text>This is empty date!</Text>
+        <Text>This is an empty date!</Text>
       </View>
     );
   };
@@ -31,8 +31,10 @@ export default function TabOneScreen() {
     <View style={styles.container}>
         <Agenda 
         items={events} 
+        selected="2022-11-23"
         renderItem={renderItem} 
         renderEmptyDate={renderEmptyDate}
+        showOnlySelectedDayItems
         />
     </View>
   );
