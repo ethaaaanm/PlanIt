@@ -2,6 +2,7 @@ import { Pressable, StyleSheet, Text, Alert } from 'react-native';
 import { View } from '../../components/Themed';
 import { Agenda, AgendaEntry } from "react-native-calendars";
 import events from "../../assets/data/events.json"
+import { Link } from 'expo-router';
 
 export default function TabOneScreen() {
 
@@ -12,7 +13,7 @@ export default function TabOneScreen() {
     return (
       <Pressable
         style={[styles.item, { height: reservation.height }]}
-        onPress={() => Alert.alert(reservation.name)}
+        onPress={() => <Link href="../modal"></Link> }
       >
         <Text style={{ fontSize, color }}>{reservation.name}</Text>
       </Pressable>

@@ -1,13 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet } from 'react-native'
+import { Platform, StyleSheet, Image } from 'react-native'
 import { View, Text } from '../components/Themed';
 import event from "../assets/data/event.json";
 import { AntDesign } from '@expo/vector-icons';
 import CustomButton from '../components/CustomButton';
+import users from '../assets/data/users.json';
 
 export default function ModalScreen() {
 
   const onJoin = () => {} ;
+
+  const displayedUsers = users.slice(0, 5)
 
   return (
     <View style={styles.container}>
@@ -18,6 +21,25 @@ export default function ModalScreen() {
       </Text>
      
     <View style={styles.footer}>
+      {/* User Avatars */}
+      <View style={styles.users}>
+        {displayedUsers.map((user, index) => (
+          <Image 
+            key={user.id}
+            source={{ uri: user.avatarUrl }} 
+            style={[styles.userAvatar, { transform: [{ translateX: -15 * index }] },
+          ]} 
+            />
+        ))}
+        <View 
+          style={[
+            styles.userAvatar, 
+            { transform: [{ translateX: -15 * displayedUsers.length }] },
+            ]}>
+          <Text>+{users.length - displayedUsers.length}</Text>
+        </View>
+      </View>
+
       <CustomButton text='Join the event' onPress={onJoin} />
     </View> 
     
@@ -44,5 +66,19 @@ const styles = StyleSheet.create({
   },
   footer: {
     marginTop: "auto",
+  },
+  users: {
+    flexDirection: "row",
+  },
+  userAvatar: {
+    width: 50,
+    aspectRatio: 1,
+    borderRadius: 25,
+    margin: 2,
+    borderWidth: 2,
+    borderColor: "white",
+    backgroundColor: "gainsboro",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
