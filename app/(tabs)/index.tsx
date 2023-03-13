@@ -30,11 +30,10 @@ export default function TabOneScreen() {
   return (
     <View style={styles.container}>
         <Agenda 
-        items={events} 
-        selected="2022-11-23"
-        renderItem={renderItem} 
-        renderEmptyDate={renderEmptyDate}
-        showOnlySelectedDayItems
+          items={events} 
+          selected="2022-11-23"
+          renderItem={renderItem} 
+          renderEmptyDate={renderEmptyDate}
         />
     </View>
   );
