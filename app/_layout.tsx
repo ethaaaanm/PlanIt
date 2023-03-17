@@ -38,6 +38,21 @@ export default function RootLayout() {
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
 
+
+  const isAuthenticated = false;
+
+
+if (!isAuthenticated) {
+  return (
+    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <Stack>
+      <Stack.Screen name="SignInScreen" options={{ title: "Sign in", headerShown: false }} />
+      <Stack.Screen name="SignUpScreen" options={{ title: "Create an account" }} />
+      </Stack>
+    </ThemeProvider>
+  );
+}
+
   return (
     <>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
