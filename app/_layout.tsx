@@ -12,7 +12,7 @@ export {
 
 export const unstable_settings = {
   // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: '(tabs)',
+  initialRouteName: 'SignOut',
 };
 
 export default function RootLayout() {
@@ -37,6 +37,19 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
+
+  const isAuthenticated = false;
+
+if (!isAuthenticated) {
+  return (
+    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <Stack>
+      <Stack.Screen name="SignInScreen" options={{ title: "Sign in", headerShown: false }} />
+      <Stack.Screen name="SignUpScreen" options={{ title: "Create an account" }} />
+      </Stack>
+    </ThemeProvider>
+  );
+}
 
   return (
     <>
