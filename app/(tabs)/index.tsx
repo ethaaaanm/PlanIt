@@ -11,12 +11,13 @@ export default function TabOneScreen() {
     const color = isFirst ? "black" : "#43515c";
 
     return (
-      <Pressable
-        style={[styles.item, { height: reservation.height }]}
-        onPress={() => <Link href="../modal"></Link> }
-      >
-        <Text style={{ fontSize, color }}>{reservation.name}</Text>
-      </Pressable>
+      <Link href="/modal" asChild>
+        <Pressable
+          style={[styles.item, { height: reservation.height }]}
+        >
+          <Text style={{ fontSize, color }}>{reservation.name}</Text>
+        </Pressable>
+      </Link>
     );
   };
 

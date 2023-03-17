@@ -28,14 +28,14 @@ export default function TabLayout() {
           title: 'Plan It',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
-            <Link href="/modal" asChild>
+            <Link href="../UsersScreen" asChild>
               <Pressable>
                 {({ pressed }) => (
                   <FontAwesome
-                    name="info-circle"
+                    name="users"
                     size={25}
-                    color={Colors[colorScheme ?? 'light'].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                    color={"dimgray"}
+                    style={{ marginRight: 15 }}
                   />
                 )}
               </Pressable>
