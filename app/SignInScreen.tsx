@@ -5,6 +5,7 @@ import {
   StyleSheet,
   useWindowDimensions,
   ScrollView,
+  ImageBackground
 } from "react-native";
 import CustomButton from "../components/AuthComponents/CustomButton";
 import CustomInput from "../components/AuthComponents/CustomInput";
@@ -43,6 +44,7 @@ const SignInScreen = () => {
 
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={styles.root}>
+      <ImageBackground source={require("./space.png")} resizeMode="cover">
       <Image source={require("./logo.png")} style={styles.logo} resizeMode="cover" />
       <View style={styles.container}>
         <CustomInput
@@ -74,6 +76,7 @@ const SignInScreen = () => {
         <CustomButton
           text={loading ? "Loading..." : "Sign In"}
           onPress={handleSubmit(onSignInPressed)}
+          bgColor={"#AE46AA"}
         />
 
         <Link href=".../SignUpScreen/index" asChild>
@@ -94,6 +97,7 @@ const SignInScreen = () => {
         />
         </Link>
       </View>
+      </ImageBackground>
     </ScrollView>
   );
 };
