@@ -22,7 +22,7 @@ const SignInScreen = () => {
 
   const { control, handleSubmit } = useForm();
 
-  const onSignInPressed = async (data) => {
+  const onSignInPressed = async () => {
     if (loading) {
       return;
     }
