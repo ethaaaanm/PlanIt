@@ -4,6 +4,8 @@ import { Agenda, AgendaEntry } from "react-native-calendars";
 import events from "../../assets/data/events.json"
 import { Link } from 'expo-router';
 
+// import { nhost } from '@nhost/nhost-js';
+
 export default function TabOneScreen() {
 
   const renderItem = (reservation: AgendaEntry, isFirst: boolean) => {
