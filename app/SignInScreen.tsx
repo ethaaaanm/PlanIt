@@ -39,7 +39,6 @@ const SignInScreen = () => {
   };
 
   const onSignUpPress = () => {
-    //Backend Stuff
   };
 
   return (
